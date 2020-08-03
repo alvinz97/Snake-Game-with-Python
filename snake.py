@@ -36,4 +36,42 @@ class Snake():
         if self.direction == "DOWN":
             self.position[0] -= 10
 
+        self.body.insert(0, self.position)
+
+        if self.position == foodPosition:
+            return 1
+        else:
+            self.body.pop()
+            return 0
+
+        def chackCollision(self):
+            if self.position[0] > 490 or self.position[0] < 0:
+                return 1
+
+            elif self.position[1] > 490 or self.position[1] < 0:
+                return 1
+
+            for bodyPart in self.body[1:]:
+                if self.position == bodyPart:
+                    return 1
+                return 0
+
+        def getHeadPosition(self):
+            return self.position
+
+        def getBody(self):
+            return self.position
+
+
+class FoodSpawer():
+    def __init__(self):
+        self.position = [random.randrange(1,50) * 10 , random.randrange(1,50) * 10 ]
+        self.isFoodOnScreen = True
+
+    def spawerFood(self):
+        if self.isFoodOnScreen == False:
+            self.position = [random.randrange(1,50) * 10 , random.randrange(1,50) * 10 ]
+            self.isFoodOnScreen = True
+        return self.position
+
         
