@@ -1,3 +1,7 @@
+# Author: Rusiru Ashan Kualathunga
+# Webiste: https://www.rusiruofficial.com/
+
+
 import tkinter as tk
 from random import randint
 from PIL import Image, ImageTk
